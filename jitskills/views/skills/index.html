@@ -1,0 +1,13 @@
+<h1>So you think you know <span data-bind="controllers.skills.emptySkill.name"></span>!</h1>
+
+<form data-formfor-skill="controllers.skills.emptySkill" data-event-submit="controllers.skills.create">
+  <input class="new-item" placeholder="js" data-bind="skill.name" />
+</form>
+
+<ul id="items">
+    <li data-foreach-skill="Skill.all" >
+        <label data-bind="skill.name"><label>
+        <a data-event-click="skill.destroy">delete</a>
+    </li>
+    <li><span data-bind="Skill.all.length"></span> <span data-bind="'item' | pluralize Skill.all.length"></span></li>
+</ul>
